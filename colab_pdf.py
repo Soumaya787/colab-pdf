@@ -20,7 +20,7 @@ def colab_pdf(file_name, notebookpath = '/content/drive/My Drive/Colab Notebooks
     os.remove(os.path.join(gdrive_home,file_name.split('.')[0] + '.pdf'))
   
   try:
-    get_ipython().system("jupyter nbconvert --output-dir='$gdrive_home' '$notebookpath''$file_name' --to pdf hidecode")
+    get_ipython().system("jupyter nbconvert --output-dir='$gdrive_home' '$notebookpath''$file_name' --to pdf --no-input")
   except:
     return("nbconvert error")
   
